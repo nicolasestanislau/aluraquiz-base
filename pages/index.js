@@ -5,7 +5,27 @@ import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 import QuizBackground from '../src/components/QuizBackground';
 
-<meta property="og:image" content={db.bg}></meta>
+export function Head({ title, description, bg }) {
+  return (
+    <head>
+
+      <link rel="icon" href={bg} />
+      
+      <meta property="og:locale" content="pt_BR" />
+
+      <meta property="og:title" content={title} />
+      <meta property="og:site_name" content="PatoQuiz" />
+
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={bg} />
+      <meta property="og:image:type" content="image/jpg" />
+      <meta property="og:image:width" content="1920" />
+      <meta property="og:image:height" content="1080" />
+      <meta property="og:type" content="website" />
+    </head>
+  ); 
+}
+
 
 
 //const BackgroundImage = styled.div`
@@ -30,6 +50,9 @@ export const QuizContainer = styled.div`
 
 export default function Home() {
   return (
+    <>
+    <Head />
+    
     <QuizBackground backgroundImage ={db.bg}>
       <QuizContainer>
         <Widget>
@@ -58,6 +81,7 @@ export default function Home() {
       </QuizContainer>
       <GitHubCorner projectUrl="https://github.com/nicolasestanislau"/>
     </QuizBackground>
+    </>
 
   )
 }
