@@ -1,3 +1,8 @@
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/jsx-filename-extension */
+/* eslint-disable react/react-in-jsx-scope */
+
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import db from '../db.json';
 import Head from '../src/components/Head';
@@ -26,8 +31,7 @@ html, body {
 }
 `;
 
-
-const theme = db.theme;
+const { theme } = db;
 
 export default function App({ Component, pageProps }) {
   return (
@@ -38,5 +42,5 @@ export default function App({ Component, pageProps }) {
         <Component {...pageProps} />
       </ThemeProvider>
     </>
-  )
+  );
 }
