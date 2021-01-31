@@ -5,6 +5,8 @@ import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 import QuizBackground from '../src/components/QuizBackground';
 
+<meta property="og:image" content={db.bg}></meta>
+
 
 //const BackgroundImage = styled.div`
 //  background-image: url(${db.bg});
