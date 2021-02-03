@@ -23,7 +23,7 @@ import Button from '../src/components/Button';
 //  background-position: center;
 // `;
 
-export const QuizContainer = styled.div`
+const QuizContainer = styled.div`
   width: 100%;
   max-width: 350px;
   padding-top: 45px;
@@ -59,17 +59,12 @@ export default function Home() {
             >
               <Input
                 name="nomeDoUsuario"
-                onChange={function (event) {
-                  console.log(event.target.value);
-                  // State
-                  // name = event.target.value;
-                  setName(event.target.value);
-                }}
+                onChange={(event) => setName(event.target.value)}
                 placeholder="Diz ai seu nome"
+                value={name}
               />
               <Button type="submit" disabled={name.length === 0}>
-                Jogar
-                {name}
+                {`Jogar ${name}`}
               </Button>
             </form>
           </Widget.Content>
